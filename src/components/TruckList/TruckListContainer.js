@@ -5,7 +5,7 @@ import FilterRadius from './FilterRadius'
 
 const TruckListContainer = ({ truckList }) => {
 
-  const renderList = truckList.map(truck => <TruckList truck={truck} key={truck.id} /> )
+  const renderList = truckList.sort((a,b) => a.distance - b.distance).map(truck => <TruckList truck={truck} key={truck.id} /> )
 
   return (
     <div className="list">

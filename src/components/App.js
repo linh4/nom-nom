@@ -4,20 +4,17 @@ import { connect } from 'react-redux';
 import * as actions from '../actions'
 import TruckMapContainer from './TruckMap/TruckMapContainer'
 import TruckListContainer from './TruckList/TruckListContainer'
-import Search from './Search'
+import SearchContainer from './Search/SearchContainer'
 
 class App extends Component {
-
-  componentDidMount() {
-    this.props.getFoodTruckData()
-  }
 
   render() {
     return (
       <div>
         <button onClick={this.props.geoLocation}>My Location</button>
         <button onClick={this.props.backSFLocation}>Back to SF</button>
-        <Search />
+        <SearchContainer />
+
         <div className="container">
           <TruckMapContainer />
           <TruckListContainer />

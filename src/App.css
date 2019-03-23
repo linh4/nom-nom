@@ -22,3 +22,7 @@ body {
   margin-left: 20px;
   width: 20%;
 }
+
+.truck-item {
+  cursor: pointer;
+}

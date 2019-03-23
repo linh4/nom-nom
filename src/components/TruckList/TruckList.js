@@ -1,8 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions'
 
-const TruckList = ({ truck }) => {
+const TruckList = ({ truck, showInfo }) => {
+
+  const handleClick = () => {
+    showInfo(truck)
+  }
+
   return (
-    <div>
+    <div onClick={handleClick} className="truck-item">
       <hr/>
       <h5>{truck.name}</h5>
       {truck.foodItems ? <p>{truck.foodItems}</p> : 'Unknown'}
@@ -13,4 +20,4 @@ const TruckList = ({ truck }) => {
   )
 }
 
-export default TruckList
+export default connect( null, actions )(TruckList)
