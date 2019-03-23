@@ -45,10 +45,21 @@ export const filterList = (trucks, currentLocation) => dispatch => {
     // get the trucks around the current location
     return Math.floor(result) < 1000
   })
-  if (truckList.length !== 0 ) {
-    dispatch({ type: 'GET_LIST', truckList})
-  } else {
-    dispatch({ type: 'GET_LIST', truckList: []})
-  }
+  dispatch({ type: 'GET_LIST', truckList})
+}
 
+export const geoLocation = () => dispatch => {
+  if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(position => {
+        const location = { lat: position.coords.latitude, lng: position.coords.longitude }
+        dispatch({ type: 'GET_LOCATION', location})
+      });
+   } else{
+      alert("Sorry, browser does not support geolocation!");
+   }
+}
+
+export const backSFLocation = () => dispatch => {
+  const location = { lat: 37.769067, lng: -122.432898}
+  dispatch({ type: 'GET_LOCATION', location})
 }

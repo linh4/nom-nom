@@ -11,19 +11,16 @@ class App extends Component {
     this.props.getFoodTruckData()
   }
 
-  geolocation() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      console.log(position.coords.latitude, position.coords.longitude);
-    });
-  }
-
   render() {
     return (
-      <div className="container">
-        <TruckMapContainer />
-        <TruckListContainer />
-        {this.geolocation()}
-      </div>
+      <div>
+        <button onClick={this.props.geoLocation}>My Location</button>
+        <button onClick={this.props.backSFLocation}>Back to SF</button>
+        <div className="container">
+          <TruckMapContainer />
+          <TruckListContainer />
+          </div>
+        </div>
     )
   }
 }

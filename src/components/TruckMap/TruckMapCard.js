@@ -1,5 +1,5 @@
 import React from "react";
-import { withScriptjs, withGoogleMap, GoogleMap, Circle } from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 import { connect } from 'react-redux';
 import TruckMapMarker from "./TruckMapMarker";
 import * as actions from '../../actions'
@@ -10,18 +10,9 @@ const TruckMapCard = withScriptjs(withGoogleMap(({ trucks, currentLocation, show
   return (
     <GoogleMap
       defaultZoom={13}
-      defaultCenter={ currentLocation }
+      center={ currentLocation }
       onClick={showLocation}
       >
-      <Circle
-        clickable
-        center={currentLocation}
-        radius={100}
-        options={{
-          fillColor: 'transparent',
-          strokeColor: 'transparent',
-       }}
-      />
       <TruckMapMarker />
     </GoogleMap>
     );

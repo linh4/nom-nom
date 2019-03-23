@@ -6,7 +6,7 @@ const initialState = {
   },
   thisTruck: null,
   isOpen: false,
-  truckList: null
+  truckList: []
 }
 
 export default (state = initialState, action) => {

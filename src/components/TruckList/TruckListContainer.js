@@ -4,7 +4,7 @@ import TruckList from './TruckList'
 
 const TruckListContainer = ({ truckList }) => {
 
-  if (truckList && truckList.length === 0) {
+  if (truckList.length === 0) {
     return (
       <div className="list">
         <h3>FoodTruck List</h3>
@@ -13,7 +13,7 @@ const TruckListContainer = ({ truckList }) => {
     )
   }
 
-  const renderList = truckList && truckList.map(truck => <TruckList truck={truck} key={truck.id}/>)
+  const renderList = truckList.map(truck => <TruckList truck={truck} key={truck.id}/>)
 
   return (
     <div className="list">
