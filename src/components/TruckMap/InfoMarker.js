@@ -5,7 +5,7 @@ const InfoMarker = ({ thisTruck }) => (
   <div>
     <h3>{thisTruck.name}</h3>
     <p>{thisTruck.foodItems}</p>
-    <p>Address: {thisTruck.address}</p>
+    <p>Distance: {thisTruck.distance} miles</p>
     <p>{thisTruck.hours ? thisTruck.hours : ''}</p>
   </div>
 )

@@ -10,7 +10,7 @@ const TruckMapCard = withScriptjs(withGoogleMap(({ trucks, currentLocation, show
   return (
     <GoogleMap
       defaultZoom={13}
-      center={ currentLocation }
+      defaultCenter={ currentLocation }
       onClick={showLocation}
       >
       <TruckMapMarker />

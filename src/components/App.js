@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions'
 import TruckMapContainer from './TruckMap/TruckMapContainer'
 import TruckListContainer from './TruckList/TruckListContainer'
+import Search from './Search'
 
 class App extends Component {
 
@@ -16,6 +17,7 @@ class App extends Component {
       <div>
         <button onClick={this.props.geoLocation}>My Location</button>
         <button onClick={this.props.backSFLocation}>Back to SF</button>
+        <Search />
         <div className="container">
           <TruckMapContainer />
           <TruckListContainer />

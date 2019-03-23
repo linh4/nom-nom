@@ -7,12 +7,12 @@ import InfoMarker from './InfoMarker'
 
 // set global google to use google maps api
 const google = window.google = window.google ? window.google : {}
-
-const TruckMapMarker = ({ thisTruck, showInfo, trucks, isOpen, currentLocation, filterList, truckList }) => {
+// animation={google.maps.Animation.DROP}
+const TruckMapMarker = ({ thisTruck, showInfo, trucks, isOpen, currentLocation, filterList, truckList, radius }) => {
 
   useEffect(() => {
-    trucks && filterList(trucks, currentLocation)
-  },[trucks, currentLocation])
+    trucks && filterList(trucks, currentLocation, radius)
+  },[trucks, currentLocation, radius])
 
   const renderTrucks = () => {
     return truckList && truckList.map(truck => {
@@ -20,7 +20,6 @@ const TruckMapMarker = ({ thisTruck, showInfo, trucks, isOpen, currentLocation, 
         <Marker
           key={truck.id}
           position={truck.location}
-          animation={truck.animation}
           icon={{
             url: "images/food-truck.svg",
             scaledSize: new google.maps.Size(50, 50)
@@ -56,13 +55,14 @@ const TruckMapMarker = ({ thisTruck, showInfo, trucks, isOpen, currentLocation, 
 
 const mapStateToProps = (state) => {
   // console.log("state",state.map.truckList)
-  const {trucks, isOpen, currentLocation, thisTruck, truckList } = state.map
+  const {trucks, isOpen, currentLocation, thisTruck, truckList, radius } = state.map
   return {
     trucks,
     isOpen,
     currentLocation,
     thisTruck,
-    truckList
+    truckList,
+    radius
     };
 };
 

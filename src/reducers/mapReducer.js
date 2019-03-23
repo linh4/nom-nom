@@ -6,7 +6,8 @@ const initialState = {
   },
   thisTruck: null,
   isOpen: false,
-  truckList: []
+  truckList: [],
+  radius: 804.672
 }
 
 export default (state = initialState, action) => {
@@ -28,9 +29,15 @@ export default (state = initialState, action) => {
         isOpen: action.truck.isOpen
       }
     case 'GET_LIST':
+
       return {
         ...state,
         truckList: action.truckList
+      }
+    case 'UPDATE_RADIUS':
+      return {
+        ...state,
+        radius: action.radius
       }
     default:
       return state

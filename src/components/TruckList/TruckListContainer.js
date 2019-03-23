@@ -1,24 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import TruckList from './TruckList'
+import FilterRadius from './FilterRadius'
 
 const TruckListContainer = ({ truckList }) => {
 
-  if (truckList.length === 0) {
-    return (
-      <div className="list">
-        <h3>FoodTruck List</h3>
-        <p>No Food Truck Here</p>
-      </div>
-    )
-  }
-
-  const renderList = truckList.map(truck => <TruckList truck={truck} key={truck.id}/>)
+  const renderList = truckList.map(truck => <TruckList truck={truck} key={truck.id} /> )
 
   return (
     <div className="list">
+      <FilterRadius />
       <h3>FoodTruck List</h3>
-      {renderList}
+      { truckList.length === 0 ? <p>No Food Truck Here</p> : renderList }
     </div>
   )
 }
