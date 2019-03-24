@@ -15,6 +15,7 @@ body {
 .map {
   width: 80%;
   height: auto;
+  position: relative;
 }
 
 .list {
@@ -25,4 +26,8 @@ body {
 
 .truck-item {
   cursor: pointer;
+}
+
+.search-location {
+  position: absolute;
 }

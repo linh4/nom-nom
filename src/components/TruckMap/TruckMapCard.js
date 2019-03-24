@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import TruckMapMarker from "./TruckMapMarker";
 import * as actions from '../../actions'
 import { style } from './style'
+import SearchLocation from '../Search/SearchLocation'
 
 
 const TruckMapCard = withScriptjs(withGoogleMap(({ trucks, currentLocation, showLocation }) => {
@@ -14,6 +15,9 @@ const TruckMapCard = withScriptjs(withGoogleMap(({ trucks, currentLocation, show
       onClick={showLocation}
       >
       <TruckMapMarker />
+      <div className="search-location">
+        <SearchLocation />
+      </div>
     </GoogleMap>
     );
   }

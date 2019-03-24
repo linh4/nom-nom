@@ -20,6 +20,7 @@ const TruckMapMarker = ({ thisTruck, showInfo, trucks, isOpen, currentLocation, 
         <Marker
           key={truck.id}
           position={truck.location}
+          animation={google.maps.Animation.DROP}
           icon={{
             url: "images/food-truck.svg",
             scaledSize: new google.maps.Size(50, 50)
@@ -54,7 +55,6 @@ const TruckMapMarker = ({ thisTruck, showInfo, trucks, isOpen, currentLocation, 
 }
 
 const mapStateToProps = (state) => {
-  // console.log("state",state.map.truckList)
   const {trucks, isOpen, currentLocation, thisTruck, truckList, radius } = state.map
   return {
     trucks,
