@@ -4,7 +4,7 @@ export const searchTruck = (trucks, term, radius) => dispatch => {
       return (truck.foodItems && truck.foodItems.toLowerCase().includes(term)) || truck.name.toLowerCase().includes(term)
     }
   })
-  dispatch({ type: 'GET_LIST', truckList })
+  return dispatch({ type: 'GET_LIST', truckList })
 }
 
 export const searchLocation = (lat, lng) => dispatch => {

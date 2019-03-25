@@ -5,9 +5,6 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions'
 import InfoMarker from './InfoMarker'
 
-// set global google to use google maps api
-const google = window.google = window.google ? window.google : {}
-// animation={google.maps.Animation.DROP}
 const TruckMapMarker = ({ thisTruck, showInfo, trucks, isOpen, currentLocation, filterList, truckList, radius }) => {
 
   useEffect(() => {

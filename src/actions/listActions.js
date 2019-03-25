@@ -1,6 +1,5 @@
 /*global google*/
 import axios from 'axios'
-const google = window.google = window.google ? window.google : {}
 
 export const getFoodTruckData = () => async dispatch => {
   try {
@@ -20,7 +19,7 @@ export const getFoodTruckData = () => async dispatch => {
         distance: 0
       }
     })
-    dispatch({ type: 'FETCH_DATA', payload })
+    return dispatch({ type: 'FETCH_DATA', payload })
   }
   catch(err) {
     console.log(err)
@@ -41,9 +40,9 @@ export const filterList = (trucks, currentLocation, radius) => dispatch => {
     return result <= radius
   })
 
-  dispatch({ type: 'GET_LIST', truckList})
+  return dispatch({ type: 'GET_LIST', truckList})
 }
 
 export const filterRadius = (radius) => dispatch => {
-  dispatch({ type: 'UPDATE_RADIUS', radius })
+  return dispatch({ type: 'UPDATE_RADIUS', radius })
 }

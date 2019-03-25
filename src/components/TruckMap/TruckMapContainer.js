@@ -1,6 +1,5 @@
 import React from "react";
 import TruckMapCard from "./TruckMapCard";
-import { style } from './style'
 import { API_KEY } from '../../keys.js'
 
 const TruckMapContainer = () => (
