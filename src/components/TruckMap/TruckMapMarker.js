@@ -7,6 +7,7 @@ import InfoMarker from './InfoMarker'
 
 const TruckMapMarker = ({ thisTruck, showInfo, trucks, isOpen, currentLocation, filterList, truckList, radius }) => {
 
+  // listen to changes for trucks, location and radius
   useEffect(() => {
     trucks && filterList(trucks, currentLocation, radius)
   },[trucks, currentLocation, radius])

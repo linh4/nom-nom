@@ -4,6 +4,7 @@ import * as actions from '../../actions'
 
 const FilterRadius = ({ filterRadius }) => {
 
+  // convert to meters
   const handleChange = (e) => {
     filterRadius(Number(e.target.value) * 1609.34)
   }

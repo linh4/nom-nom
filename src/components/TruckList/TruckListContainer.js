@@ -13,7 +13,7 @@ const TruckListContainer = ({ truckList }) => {
     <div className="truck-container">
       <SearchTruck />
       <FilterRadius />
-      <div className="truck-list">
+      <div className="list">
         { truckList.length === 0 ? <p>No Food Truck Here</p> : renderList }
       </div>
     </div>

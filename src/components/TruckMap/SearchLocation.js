@@ -9,6 +9,7 @@ const SearchLocation = ({ searchLocation }) => {
 
   let autocomplete;
 
+  // set up autocomplete for google maps
   useEffect(() => {
     autocomplete = new google.maps.places.Autocomplete(
       inputEl.current,

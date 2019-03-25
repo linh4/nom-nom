@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 const InfoMarker = ({ thisTruck, currentLocation }) => {
 
+  // link to rendering direction in google maps
   const url = `https://www.google.com/maps/dir/${currentLocation.lat}, ${currentLocation.lng}/${thisTruck.location.lat},${thisTruck.location.lng}/data=!3m1!4b1!4m4!4m3!1m0!1m1!4e1`
 
   return (

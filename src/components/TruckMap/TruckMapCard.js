@@ -12,12 +12,12 @@ const TruckMapCard = withScriptjs(withGoogleMap(({ trucks, currentLocation, show
     <GoogleMap
       defaultOptions={{ styles: style }}
       defaultZoom={13}
-      defaultCenter={ currentLocation }
+      center={ currentLocation }
       onClick={showLocation}
       >
       <TruckMapMarker />
       <div className="search-location">
-        <button className="btn btn-geo" onClick={geoLocation}>Locate Me</button>
+        <button className="btn btn-geo" onClick={geoLocation}>Locate Me!</button>
         <button className="btn btn-back" onClick={backSFLocation}>Back to SF</button>
         <SearchLocation />
       </div>

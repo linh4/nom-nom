@@ -1,6 +1,7 @@
 .marker-window {
   width: 30rem;
   height: auto;
+  line-height: 2.3rem;
 
   &--heading {
     color: $color-green-dark;
@@ -31,22 +32,32 @@
   font-family: inherit;
   color: $color-white;
   border-radius: 5px;
-  width: 10rem;
+  width: 15rem;
   height: 5rem;
   padding: 0 1rem;
-  margin-left: .5rem;
   text-transform: uppercase;
   font-weight: 700;
-  box-shadow: 0 1rem 1.5rem rgba($color-black, .3);
+  box-shadow: 0 .5rem 1rem rgba($color-black, .3);
+  transform: translateY(0px);
   transition: all .2s;
 
+  @media only screen and (max-width: $bp-small) {
+    font-size: 1.2rem;
+    padding: 0;
+    width: 12rem;
+  }
+
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+
+    @media only screen and (max-width: $bp-medium) {
+      transform: none;
+   }
   }
 
   &-geo {
     background-color: $color-green-dark-2;
-    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   &-back {
@@ -57,8 +68,10 @@
 
 // SEARCH LOCATION
 .search-input {
-  margin-left: 1rem;
+  // margin: 0 1rem;
+  margin-right: 1rem;
   position: relative;
+  width: 100%;
 
   input {
     width: 100%;

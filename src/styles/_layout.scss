@@ -2,31 +2,50 @@
   display: flex;
   padding: 4rem;
   height: 100vh;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 0;
+  }
 }
 
 .truck-container {
-  border-right: 3px solid $color-primary;
-  border-bottom: 1px solid $color-primary;
+  border-right: 3px solid $color-primary-light;
+  border-bottom: 1px solid $color-primary-light;
   width: 50rem;
   font-size: 2rem;
   height: 100%;
   overflow: scroll;
   padding: 2rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    width: 100%;
+    padding: 5rem 10rem;
+    border: 0;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 5rem 4rem;
+  }
 }
 
 
 .map {
   width: 100%;
   position: relative;
+
+  @media only screen and (max-width: $bp-medium) {
+    height: 50rem;
+  }
 }
 
 .search-location {
   position: absolute;
-  left: 50%;
+  left: 0;
   top: 1rem;
-  transform: translateX(-50%);
   text-align: center;
-  // width: 60%;
+  width: 100%;
   display: flex;
-  // justify-content: space-between;
+  align-items: center;
 }

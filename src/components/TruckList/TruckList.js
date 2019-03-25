@@ -13,9 +13,9 @@ const TruckList = ({ truck, showInfo }) => {
       <h3 className="list__item-heading">{truck.name}</h3>
       <div className="list__item-info">
         {truck.foodItems ? <p className="list__item-info-food">{truck.foodItems}</p> : 'Unknown'}
-        <p>Address: {truck.address}</p>
-        <p>Distance: {truck.distance} miles</p>
-        {truck.hours ? <p>Hours: {truck.hours}</p> : ''}
+        <p><strong>Address:</strong> {truck.address}</p>
+        <p><strong>Distance:</strong> {truck.distance} miles</p>
+        {truck.hours ? <p><strong>Hours:</strong> {truck.hours}</p> : ''}
       </div>
     </div>
   )
