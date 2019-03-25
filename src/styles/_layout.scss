@@ -11,13 +11,13 @@
 }
 
 .truck-container {
-  border-right: 3px solid $color-primary-light;
-  border-bottom: 1px solid $color-primary-light;
+  border-right: 3px solid $color-orange-light;
+  border-bottom: 1px solid $color-orange-light;
   width: 50rem;
   font-size: 2rem;
   height: 100%;
   overflow: scroll;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
 
   @media only screen and (max-width: $bp-medium) {
     width: 100%;

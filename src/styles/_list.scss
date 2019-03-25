@@ -25,7 +25,7 @@
     font-size: 1.5rem;
     font-family: inherit;
     color: $color-white;
-    background: $color-primary;
+    background: $color-orange;
     border-radius: 5px;
     padding: 0 1rem;
     transition: all .2s;
@@ -36,7 +36,7 @@
     }
 
     &:hover {
-      background: $color-green-dark;
+      background: $color-orange-light;
     }
   }
 }
@@ -118,7 +118,7 @@
     color: $color-white;
 
     .highlight {
-      color: $color-primary-light;
+      color: $color-orange-light;
     }
   }
 }
@@ -141,7 +141,7 @@
 }
 
 .highlight {
-  color: $color-primary;
+  color: $color-orange;
   font-weight: 700;
 }
 
@@ -161,7 +161,7 @@
   &::after {
     position: absolute;
     right: .5em;
-    top: 40%;
+    top: 45%;
     transform: translateY(-50%);
     content: '\2304';
     z-index: 20;
@@ -169,6 +169,7 @@
     font-size: 3rem;
 
     @media only screen and (max-width: $bp-medium) {
+      top: 40%;
       right: 38%;
     }
 
@@ -191,6 +192,7 @@
     cursor: pointer;
     z-index: 1;
     appearance:none;
+    transition: all .2s;
 
     /*hide default down arrow in webkit */
     -webkit-appearance: none;
@@ -205,6 +207,10 @@
     }
 
     &:focus { outline: none; }
+
+    &:hover {
+      background: $color-green-dark-2 !important;
+    }
   }
 }
 
@@ -254,7 +260,7 @@
     &-heading {
       white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis;  //truncate long title 
+      text-overflow: ellipsis;  //truncate long title
       letter-spacing: .4rem;
       text-transform: uppercase;
       color: $color-green-dark-2;
@@ -270,6 +276,7 @@
 
       &-food {
         font-style: italic;
+        text-transform: capitalize;
       }
     }
   }
