@@ -1,0 +1,59 @@
+// SET COLOR VARIABLES
+$color-primary: #ff6c00;
+$color-primary-light: #fac9a9;
+
+$color-green-light: #bae5ce;
+$color-green-dark: #6195a0;
+$color-green-dark-2: #527f88;
+
+
+$color-grey-light: #aaa;
+$color-grey-light-2: #ddd;
+$color-grey: #787878;
+$color-grey-dark: #4e4e4e;
+
+$color-white: #fff;
+$color-black: #000;
+
+
+// Responsive variables:
+$bp-largest: 75rem; //1200px
+$bp-large: 62.5rem; //1000px
+$bp-medium: 56.25rem; //900px
+$bp-small: 37.5rem; //600px
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1rem = 10px; 10/16 = 62.5%
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 56.25%; //1rem = 9px; 9/16 = 56.25%
+  }
+
+   @media only screen and (max-width: $bp-large) {
+     font-size: 50%; //1rem = 8px; 8/16 = 50%
+   }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: $color-grey-dark;
+}
+
+button {
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}

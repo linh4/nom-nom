@@ -19,7 +19,7 @@ export const getFoodTruckData = () => async dispatch => {
         distance: 0
       }
     })
-    return dispatch({ type: 'FETCH_DATA', payload })
+    dispatch({ type: 'FETCH_DATA', payload })
   }
   catch(err) {
     console.log(err)
@@ -40,9 +40,9 @@ export const filterList = (trucks, currentLocation, radius) => dispatch => {
     return result <= radius
   })
 
-  return dispatch({ type: 'GET_LIST', truckList})
+  dispatch({ type: 'GET_LIST', truckList})
 }
 
 export const filterRadius = (radius) => dispatch => {
-  return dispatch({ type: 'UPDATE_RADIUS', radius })
+  dispatch({ type: 'UPDATE_RADIUS', radius })
 }

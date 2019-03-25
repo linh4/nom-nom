@@ -30,14 +30,14 @@ const SearchLocation = ({ searchLocation }) => {
   }
 
   return (
-    <div>
+    <div className="search-input">
       <input
       ref={inputEl}
       id="autocomplete"
-      placeholder="Enter your address"
+      placeholder="Enter the location"
       type="text"
       />
-      <button onClick={handleDone}>X</button>
+      <button className="search-input--clear" onClick={handleDone}>&#10006;</button>
     </div>
   )
 }

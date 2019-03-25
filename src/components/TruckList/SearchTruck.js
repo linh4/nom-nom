@@ -9,26 +9,24 @@ import AutosuggestHighlightParse from 'autosuggest-highlight/parse'
 const getSuggestions = (value, truckList) => {
   const trimValue = value.trim()
   const escapedValue = trimValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  if (escapedValue === '') {
-    return [];
-  }
+
+  if (escapedValue === '') return []
+
   const regex = new RegExp('\\b' + escapedValue, 'i');
   return truckList.filter(truck => regex.test(getSuggestionValue(truck)));
 };
 
 // When suggestion is clicked, populate the input based on the clicked suggestion
-const getSuggestionValue = (suggestion) => {
-  return suggestion.name;
-}
+const getSuggestionValue = (suggestion) => suggestion.name
 
+// highlight match search input
 const renderSuggestion = (suggestion, { query }) => {
   const suggestionText = suggestion.name;
   const matches = AutosuggestHighlightMatch(suggestionText, query);
   const parts = AutosuggestHighlightParse(suggestionText, matches);
-
   return (
-    <span className="suggestion-content">
-      <span className="name">
+    <span className="suggestion__content">
+      <span className="suggestion__content-name">
         { parts.map((part, idx) => {
             const className = part.highlight ? 'highlight' : null;
             return (
@@ -36,7 +34,7 @@ const renderSuggestion = (suggestion, { query }) => {
             );
           })
         }
-        <div className="address">{suggestion.address}</div>
+        <div className="suggestion__content-address">{suggestion.address}</div>
       </span>
     </span>
   );
@@ -65,40 +63,36 @@ const SearchTruck = ({ trucks, searchTruck, radius, truckList }) => {
     searchTruck(trucks, value.toLowerCase(), radius)
   }
 
-  const handleClear = () => {
+  const handleClearInput = () => {
     setValue('')
   }
 
   const inputProps = {
     placeholder: 'Enter food or truck name',
     value,
-    onChange: onChange
+    onChange: onChange,
+    onSubmit: handleSubmit
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <Autosuggest
-          suggestions={suggestions}
-          onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={onSuggestionsClearRequested}
-          getSuggestionValue={getSuggestionValue}
-          renderSuggestion={renderSuggestion}
-          inputProps={inputProps}
-        />
-        <button type="submit">Search</button>
-        <button onClick={handleClear}>X</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="form">
+      <Autosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
+      />
+      <button className="form-search--btn" type="submit">Search</button>
+      <button className="form-clear" onClick={handleClearInput}>&#10006;</button>
+    </form>
   )
 }
 
 const mapStateToProps = (state) => {
-  return {
-    trucks: state.map.trucks,
-    radius: state.map.radius,
-    truckList: state.map.truckList
-    };
+  const { trucks, radius, truckList } = state.map
+  return { trucks, radius, truckList }
 };
 
 export default connect( mapStateToProps, actions )(SearchTruck);

@@ -9,8 +9,8 @@ const FilterRadius = ({ filterRadius }) => {
   }
 
   return (
-    <div>
-      <select onChange={handleChange}>
+    <div className="radius-option">
+      <select className="radius-option__select" onChange={handleChange}>
         <option value="0.5">0.5 mile</option>
         <option value="1">1 mile</option>
         <option value="0.25">0.25 mile</option>

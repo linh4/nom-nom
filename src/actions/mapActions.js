@@ -1,11 +1,11 @@
 export const showInfo = (truck) => dispatch => {
   truck.isOpen = !truck.isOpen
-  return dispatch({ type: 'GET_MARKER', truck  })
+  dispatch({ type: 'GET_MARKER', truck  })
 }
 
 export const showLocation = (e) => dispatch => {
   let location = { lat: e.latLng.lat(), lng: e.latLng.lng() }
-  return dispatch({ type: 'GET_LOCATION', location })
+  dispatch({ type: 'GET_LOCATION', location })
 }
 
 export const geoLocation = () => dispatch => {

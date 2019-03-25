@@ -11,29 +11,24 @@ const TruckMapMarker = ({ thisTruck, showInfo, trucks, isOpen, currentLocation, 
     trucks && filterList(trucks, currentLocation, radius)
   },[trucks, currentLocation, radius])
 
-  const renderTrucks = () => {
-    return truckList && truckList.map(truck => {
-      return (
-        <Marker
-          key={truck.id}
-          position={truck.location}
-          animation={google.maps.Animation.DROP}
-          icon={{
-            url: "images/food-truck.svg",
-            scaledSize: new google.maps.Size(50, 50)
-          }
-          }
-          onClick={() => showInfo(truck)}
-        >
-        { isOpen && truck === thisTruck &&
-          <InfoWindow position={truck.location}>
-            <InfoMarker />
-          </InfoWindow>
-        }
-        </Marker>
-      )
-    })
-  }
+  const renderTrucks = () => truckList && truckList.map(truck => (
+    <Marker
+      key={truck.id}
+      position={truck.location}
+      animation={google.maps.Animation.DROP}
+      icon={{
+        url: "images/food-truck.svg",
+        scaledSize: new google.maps.Size(50, 50)
+      }}
+      onClick={() => showInfo(truck)}
+    >
+    { isOpen && truck === thisTruck &&
+      <InfoWindow position={truck.location}>
+        <InfoMarker />
+      </InfoWindow>
+    }
+    </Marker>
+  ))
 
   return (
     <div>
@@ -53,14 +48,7 @@ const TruckMapMarker = ({ thisTruck, showInfo, trucks, isOpen, currentLocation, 
 
 const mapStateToProps = (state) => {
   const {trucks, isOpen, currentLocation, thisTruck, truckList, radius } = state.map
-  return {
-    trucks,
-    isOpen,
-    currentLocation,
-    thisTruck,
-    truckList,
-    radius
-    };
+  return { trucks, isOpen, currentLocation, thisTruck, truckList, radius }
 };
 
 export default connect( mapStateToProps, actions )(TruckMapMarker);

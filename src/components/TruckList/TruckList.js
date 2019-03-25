@@ -9,13 +9,14 @@ const TruckList = ({ truck, showInfo }) => {
   }
 
   return (
-    <div onClick={handleClick} className="truck-item">
-      <hr/>
-      <h5>{truck.name}</h5>
-      {truck.foodItems ? <p>{truck.foodItems}</p> : 'Unknown'}
-      <p>Address: {truck.address}</p>
-      <p>Distance: {truck.distance} miles</p>
-      {truck.hours ? <p>Hours: {truck.hours}</p> : ''}
+    <div onClick={handleClick} className="list__item">
+      <h3 className="list__item-heading">{truck.name}</h3>
+      <div className="list__item-info">
+        {truck.foodItems ? <p className="list__item-info-food">{truck.foodItems}</p> : 'Unknown'}
+        <p>Address: {truck.address}</p>
+        <p>Distance: {truck.distance} miles</p>
+        {truck.hours ? <p>Hours: {truck.hours}</p> : ''}
+      </div>
     </div>
   )
 }
