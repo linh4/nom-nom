@@ -38,7 +38,7 @@ const SearchLocation = ({ searchLocation }) => {
       placeholder="Enter the location"
       type="text"
       />
-      <button className="search-input--clear" onClick={handleDone}>&#10006;</button>
+      <button className="input-btn-clear location-clear" onClick={handleDone}>&#10006;</button>
     </div>
   )
 }

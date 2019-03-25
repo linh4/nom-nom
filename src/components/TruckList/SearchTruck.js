@@ -85,7 +85,7 @@ const SearchTruck = ({ trucks, searchTruck, radius, truckList }) => {
         inputProps={inputProps}
       />
       <button className="form-search--btn" type="submit">Search</button>
-      <button className="form-clear" onClick={handleClearInput}>&#10006;</button>
+      <button className="input-btn-clear food-clear" onClick={handleClearInput}>&#10006;</button>
     </form>
   )
 }
