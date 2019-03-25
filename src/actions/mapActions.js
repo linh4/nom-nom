@@ -8,11 +8,6 @@ export const showLocation = (e) => dispatch => {
   return dispatch({ type: 'GET_LOCATION', location })
 }
 
-export const searchLocation = (lat, lng) => dispatch => {
-  let location = { lat, lng }
-  return dispatch({ type: 'GET_LOCATION', location })
-}
-
 export const geoLocation = () => dispatch => {
   if(navigator.geolocation){
       return navigator.geolocation.getCurrentPosition(position => {

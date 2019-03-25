@@ -6,3 +6,8 @@ export const searchTruck = (trucks, term, radius) => dispatch => {
   })
   dispatch({ type: 'GET_LIST', truckList })
 }
+
+export const searchLocation = (lat, lng) => dispatch => {
+  let location = { lat, lng }
+  return dispatch({ type: 'GET_LOCATION', location })
+}

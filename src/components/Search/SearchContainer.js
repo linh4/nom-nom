@@ -1,10 +1,10 @@
 import React from 'react';
-import SearchFood from './SearchFood'
+import SearchTruck from './SearchTruck'
 
 const SearchContainer = () => {
   return (
     <div>
-      <SearchFood />
+      <SearchTruck />
     </div>
   )
 }

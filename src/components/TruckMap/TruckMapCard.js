@@ -2,9 +2,9 @@ import React from "react";
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 import { connect } from 'react-redux';
 import TruckMapMarker from "./TruckMapMarker";
+import SearchLocation from '../Search/SearchLocation'
 import * as actions from '../../actions'
 import { style } from './style'
-import SearchLocation from '../Search/SearchLocation'
 
 
 const TruckMapCard = withScriptjs(withGoogleMap(({ trucks, currentLocation, showLocation }) => {
