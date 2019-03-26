@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NOM NOM - SF FOOD TRUCK FINDER
 
-## Available Scripts
+**A React web app for finding local SF Food Trucks in specific location**
 
-In the project directory, you can run:
+![Nom Nom  on Desktop](app-big.png)
+![Nom Nom  on Responsive](app-small.png)
 
-### `npm start`
+### Hosted application
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Nom Nom](https://nom-nom-baa86.firebaseapp.com/)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Technical Track
 
-### `npm test`
+Front End: React, Redux, SaaS.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Since the result need to be updated everytime users pick different location or search for food or truck's name, redux is great for managing state and the components in React can have access to the store easily.
 
-### `npm run build`
+### Features
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Click on any position on the map and it will show food trucks around the location.
+* Users can type address in SF to find food trucks nearby (Use google map Autocomplete to render suggestions of location).
+* Used geolocation to access to users' location and render food truck around the locaton (better to test if you are in SF).
+* The food truck information has name of the truck, type of food, distance within 0.5 mile of that location, hours of operation and directions to the truck using google maps.
+* Users can search for food truck name or food type, the map and the food truck list will render result based on the search input (Used autosuggesst to match the search input).
+* Users can filter radius: 0.25 mile, 0.5 mile (default), 1 mile from the location.
+* All the results are sorted by distance.
+* Applied Mobile Responsive Design
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Future Plans
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Filter hours of operation
+* Filter food type
+* Apply Testing
 
-### `npm run eject`
+### Profile
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Portfolio](http://www.linhhuynh.net/)
