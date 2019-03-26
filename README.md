@@ -3,7 +3,7 @@
 **A React web app for finding local SF Food Trucks in specific location**
 
 ![Nom Nom  on Desktop](app-big.png)
-![Nom Nom  on Responsive](app-small.png)
+![Nom Nom  on Responsive](app-sm.png)
 
 ### Hosted application
 
