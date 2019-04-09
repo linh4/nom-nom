@@ -11,7 +11,7 @@
 
 ### Technical Track
 
-Front End: React, Redux, SaaS.
+Front End: React, Redux, Sass.
 
 Since the result need to be updated everytime users pick different location or search for food or truck's name, redux is great for managing state and the components in React can have access to the store easily.
 
